@@ -47,11 +47,27 @@ class Family extends Component {
   }
 }
 
+class CoolDispay extends Component {
+  isCool() {
+    if (this.context.state.cool && this.context.state.age < 30)
+      return 'YEEEEAAAAH!';
+    return 'naw';
+  }
+
+  render() {
+    console.log(this.context);
+    return <p>Is it cool? {this.isCool()}</p>;
+  }
+}
+
+CoolDispay.contextType = ChrisContext;
+
 class App extends Component {
   render() {
     return (
       <ChrisProvider>
         <Family />
+        <CoolDispay />
       </ChrisProvider>
     );
   }
