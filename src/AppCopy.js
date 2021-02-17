@@ -31,23 +31,21 @@ class ChrisProvider extends Component {
   }
 }
 
+const Person = (context) => (
+  <>
+    <h1>{context.state.name}</h1>
+    <p>{context.state.age}</p>
+    <button onClick={context.growOlder}>👵🏻</button>
+  </>
+);
+
 class Family extends Component {
   render() {
-    return (
-      <ChrisContext.Consumer>
-        {(context) => (
-          <>
-            <h1>{context.state.name}</h1>
-            <p>{context.state.age}</p>
-            <button onClick={context.growOlder}>👵🏻</button>
-          </>
-        )}
-      </ChrisContext.Consumer>
-    );
+    return <ChrisContext.Consumer>{Person}</ChrisContext.Consumer>;
   }
 }
-
 class CoolDispay extends Component {
+  static contextType = ChrisContext;
   isCool() {
     if (this.context.state.cool && this.context.state.age < 30)
       return 'YEEEEAAAAH!';
@@ -60,7 +58,7 @@ class CoolDispay extends Component {
   }
 }
 
-CoolDispay.contextType = ChrisContext;
+// CoolDispay.contextType = ChrisContext;
 
 class App extends Component {
   render() {
