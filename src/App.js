@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import UserCard from './User/UserCard';
-import UserContextProvider from './User/UserContextProvider';
+import Index from './Colors/Index';
 
 class App extends Component {
   render() {
-    return (
-      <UserContextProvider>
-        <UserCard />
-      </UserContextProvider>
-    );
+    return <Index />;
   }
 }
 
