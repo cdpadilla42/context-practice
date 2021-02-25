@@ -1,5 +1,7 @@
 import React from 'react';
 
+export const ColorsContext = React.createContext();
+
 export const colors = {
   light: {
     background: '#fff',
@@ -10,5 +12,3 @@ export const colors = {
     color: 'white',
   },
 };
-
-export const ColorsContext = React.createContext(colors.light);

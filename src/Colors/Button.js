@@ -5,7 +5,11 @@ class Button extends Component {
   static contextType = ColorsContext;
 
   render() {
-    return <button style={this.context}>Hello</button>;
+    return (
+      <button onClick={this.props.onClick} style={this.context}>
+        Hello
+      </button>
+    );
   }
 }
 
